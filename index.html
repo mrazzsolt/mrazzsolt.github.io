@@ -1,53 +1,73 @@
 <!DOCTYPE html>
-<html lang="hu">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mráz Zsolt Dániel – Portfólió</title>
+  <title>Zsolt Dániel Mráz – Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
     <div class="container">
       <div class="profile-pic"></div>
-      <h1>Mráz Zsolt Dániel</h1>
-      <p>Teszt szöveg</p>
-      <button id="theme-toggle">🌙 / ☀️</button>
+      <h1>Zsolt Dániel Mráz</h1>
+      <p class="intro">Developer passionate about solving complex problems with simple and efficient solutions. I work on both frontend and backend applications, and I have a keen interest in algorithms and hardware projects.</p>
+      <button id="theme-toggle" class="animated-btn">🌙 / ☀️</button>
     </div>
   </header>
 
-  <section id="projects">
-    <div class="container">
-      <h2>Projektek</h2>
-      <div class="project-list">
-        <div class="project">
-          <h3>Projekt Neve</h3>
-          <p>Rövid leírás a projektről</p>
-          <a href="https://github.com/mrazzsolt/flight_reservation">Projekt neve</a> 
+  <main>
+    <section id="projects">
+      <div class="container">
+        <h2>Projects</h2>
+        <div class="project-list">
+          <!-- First two projects -->
+          <div class="project">
+            <h3>Flight Reservation</h3>
+            <p>A flight reservation system allowing users to book and manage flights. This project was built using a combination of front-end and back-end technologies for dynamic user experience.</p>
+            <a href="https://github.com/mrazzsolt/flight_reservation" target="_blank">GitHub – Flight Reservation</a>
+          </div>
+          <div class="project">
+            <h3>TicTacToe MiniMax</h3>
+            <p>An AI-based TicTacToe game using the MiniMax algorithm to provide unbeatable gameplay. The project showcases artificial intelligence in a classic game scenario.</p>
+            <a href="https://github.com/mrazzsolt/tictactoeMiniMax" target="_blank">GitHub – TicTacToe MiniMax</a>
+          </div>
+          
+          <!-- Your new projects -->
+          <div class="project">
+            <h3>kshAnalysis</h3>
+            <p>A tool to analyze and process shell script data, designed to help users better understand script performance and optimize their execution paths.</p>
+            <a href="https://github.com/mrazzsolt/kshAnalysis" target="_blank">GitHub – kshAnalysis</a>
+          </div>
+          <div class="project">
+            <h3>gdpAnalyzer</h3>
+            <p>An analytical tool designed to visualize and analyze GDP data over different years and countries. It helps identify trends and patterns in economic data.</p>
+            <a href="https://github.com/mrazzsolt/gdpAnalyzer" target="_blank">GitHub – gdpAnalyzer</a>
+          </div>
         </div>
-        <!-- További projektek -->
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="about">
-    <div class="container">
-      <h2>Rólam</h2>
-      <p>Ide, a rólam szövege</p>
-    </div>
-  </section>
+    <section id="about">
+      <div class="container">
+        <h2>About Me</h2>
+        <p>I am a developer and tech enthusiast with a deep passion for problem-solving. I enjoy working with different technologies across the stack, and I am always excited to learn new tools and techniques. I focus on writing clean, efficient code and building scalable applications.</p>
+      </div>
+    </section>
 
-  <section id="contact">
-    <div class="container">
-      <h2>Kapcsolat</h2>
-      <p>Email: zsolt@example.com</p>
-      <p>GitHub: https://github.com/mrazzsolt</p>
-    </div>
-  </section>
+    <section id="contact">
+      <div class="container">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:zsolt@example.com">zsolt@example.com</a></p>
+        <p>GitHub: <a href="https://github.com/mrazzsolt" target="_blank">github.com/mrazzsolt</a></p>
+      </div>
+    </section>
+  </main>
 
   <footer>
     <div class="container">
-      <p>&copy; 2025 Mráz Zsolt Dániel</p>
+      <p>&copy; 2025 Zsolt Dániel Mráz</p>
     </div>
   </footer>
 
