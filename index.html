@@ -3,75 +3,159 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Zsolt Dániel Mráz – Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <title>Zsolt Dániel Mráz - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <button id="theme-toggle" class="animated-btn">🌙 / ☀️</button>
-    <div class="container">
-      <div class="profile-pic"></div>
-      <h1>Zsolt Dániel Mráz</h1>
-      <p class="intro">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quibusdam veniam non, exercitationem, 
-        officiis dicta culpa molestias harum fugit, voluptatum sapiente deleniti cumque! Est inventore reiciendis accusantium vero possimus quibusdam!</p>
-      
+  <!-- Navigation Header -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-brand">Portfolio</div>
+      <div class="nav-links">
+        <a href="#projects" class="nav-link">View Projects</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <button id="theme-toggle" class="theme-btn">🌙 Dark</button>
+      </div>
     </div>
-  </header>
+  </nav>
 
-  <main>
-    <section id="projects">
-      <div class="container">
-        <h2>Projects</h2>
-        <div class="project-list">
-          <!-- First two projects -->
-          <div class="project">
-            <h3>Flight Reservation</h3>
-            <p>A flight reservation system allowing users to book and manage flights. </p>
-            <a href="https://github.com/mrazzsolt/flight_reservation" target="_blank">GitHub – Flight Reservation</a>
+  <!-- Hero Section-->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="profile-picture">
+          <img src="your-photo.jpg" alt="Zsolt Dániel Mráz" />
+        </div>
+        <h1 class="hero-title">Zsolt Dániel Mráz</h1>
+        <p class="hero-subtitle">Application Support Analyst</p>
+        <p class="hero-description">By day, I support and project with databases, but in my free time, you'll find me writing code, exploring new technologies, and always looking to grow as a developer.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section-->
+  <section id="skills" class="skills-section">
+    <div class="container">
+      <h2 class="section-title fade-in-on-scroll">Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-item fade-in-on-scroll">
+          <div class="skill-header">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="skill-icon">
+            <span class="skill-name">Python</span>
           </div>
-          <div class="project">
-            <h3>TicTacToe MiniMax</h3>
-            <p>An AI-based TicTacToe game using the MiniMax algorithm to provide unbeatable gameplay.</p>
-            <a href="https://github.com/mrazzsolt/tictactoeMiniMax" target="_blank">GitHub – TicTacToe MiniMax</a>
+          <div class="skill-bar">
+            <div class="skill-progress" data-skill="7"></div>
           </div>
-          
-          <!-- Your new projects -->
-          <div class="project">
-            <h3>kshAnalysis</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <a href="https://github.com/mrazzsolt/kshAnalysis" target="_blank">GitHub – kshAnalysis</a>
+          <span class="skill-level">7/10</span>
+        </div>
+
+        <div class="skill-item fade-in-on-scroll">
+          <div class="skill-header">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" class="skill-icon">
+            <span class="skill-name">SQL</span>
           </div>
-          <div class="project">
-            <h3>gdpAnalyzer</h3>
-            <p>An analytical tool designed to visualize and analyze GDP data over different years and countries. It helps identify trends and patterns in economic data.</p>
-            <a href="https://github.com/mrazzsolt/gdpAnalyzer" target="_blank">GitHub – gdpAnalyzer</a>
+          <div class="skill-bar">
+            <div class="skill-progress" data-skill="9"></div>
           </div>
+          <span class="skill-level">9/10</span>
+        </div>
+
+        <div class="skill-item fade-in-on-scroll">
+          <div class="skill-header">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="skill-icon">
+            <span class="skill-name">JavaScript</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-skill="3"></div>
+          </div>
+          <span class="skill-level">3/10</span>
+        </div>
+
+        <div class="skill-item fade-in-on-scroll">
+          <div class="skill-header">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#" class="skill-icon">
+            <span class="skill-name">C#</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-skill="3"></div>
+          </div>
+          <span class="skill-level">3/10</span>
+        </div>
+
+        <div class="skill-item fade-in-on-scroll">
+          <div class="skill-header">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" class="skill-icon">
+            <span class="skill-name">PHP</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-skill="3"></div>
+          </div>
+          <span class="skill-level">3/10</span>
         </div>
       </div>
-    </section>
-
-    <section id="about">
-      <div class="container">
-        <h2>About Me</h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium in eveniet neque corrupti fuga cum obcaecati eaque aperiam odio nisi? Quas voluptas dolor fuga harum voluptatibus iusto animi. Enim, voluptate?</p>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="container">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:zsolt@example.com">zsolt@example.com</a></p>
-        <p>GitHub: <a href="https://github.com/mrazzsolt" target="_blank">github.com/mrazzsolt</a></p>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Zsolt Dániel Mráz</p>
     </div>
-  </footer>
+  </section>
+
+  <!-- Projects section-->
+  <section id="projects" class="projects-section">
+    <div class="container">
+      <h2 class="section-title fade-in-on-scroll">Selected Projects</h2>
+      <div class="projects-grid">
+        <div class="project-item fade-in-on-scroll">
+          <h3>Flight Reservation System</h3>
+          <p>Full-stack application for flight booking and management</p>
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">OOP</span>
+          </div>
+          <a href="https://github.com/mrazzsolt/flight_reservation" class="project-link" target="_blank">View Project</a>
+        </div>
+        
+        <div class="project-item fade-in-on-scroll">
+          <h3>TicTacToe</h3>
+          <p>MiniMax algorithm powered game</p>
+          <div class="project-tags">
+            <span class="tag">Algorithm</span>
+            <span class="tag">Python</span>
+          </div>
+          <a href="https://github.com/mrazzsolt/tictactoeMiniMax" class="project-link" target="_blank">View Project</a>
+        </div>
+        
+        <div class="project-item fade-in-on-scroll">
+          <h3>GDP Analyzer</h3>
+          <p>Data visualization tool for economic analysis</p>
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">Data Viz</span>
+          </div>
+          <a href="https://github.com/mrazzsolt/gdpAnalyzer" class="project-link" target="_blank">View Project</a>
+        </div>
+
+        <div class="project-item fade-in-on-scroll">
+          <h3>KSH Analysis</h3>
+          <p>Statistical analysis tool for processing data</p>
+          <div class="project-tags">
+            <span class="tag">Statistics</span>
+            <span class="tag">Analysis</span>
+            <span class="tag">Python</span>
+          </div>
+          <a href="https://github.com/mrazzsolt/kshAnalysis" class="project-link" target="_blank">View Project</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <h2 class="section-title fade-in-on-scroll">Let's Connect</h2>
+      <div class="contact-links fade-in-on-scroll">
+        <a href="mailto:zsolt@example.com" class="contact-link">Email</a>
+        <a href="https://github.com/mrazzsolt" class="contact-link" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </section>
 
   <script src="script.js"></script>
 </body>
