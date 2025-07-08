@@ -1,7 +1,7 @@
-// Wait for DOM to fully load
+// Várjuk meg, hogy a DOM teljesen betöltődjön
 document.addEventListener('DOMContentLoaded', function() {
   
-  // Dark mode toggle functionality
+  // Dark mode toggle
   const themeToggle = document.getElementById('theme-toggle');
   const body = document.body;
 
@@ -13,26 +13,25 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  // Theme toggle event listener
+  // Theme toggle functionality
   if (themeToggle) {
     themeToggle.addEventListener('click', () => {
       body.classList.toggle('dark-mode');
       updateButton();
       
-      // Save theme preference to localStorage
       const isDark = body.classList.contains('dark-mode');
       localStorage.setItem('darkMode', isDark);
     });
   }
 
-  // Load saved theme preference on page load
+  // Load saved theme
   const savedTheme = localStorage.getItem('darkMode');
   if (savedTheme === 'true') {
     body.classList.add('dark-mode');
   }
   updateButton();
 
-  // Portfolio brand button - scroll to top
+  // Portfolio button scroll up
   const navBrand = document.querySelector('.nav-brand');
   if (navBrand) {
     navBrand.addEventListener('click', function(e) {
@@ -44,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Smooth scroll navigation and active link styling
+  // Smooth scroll and active link
   document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', function(e) {
       e.preventDefault();
@@ -59,16 +58,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
       }
       
-      // Update active link styling
+      // Active link styling
       document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
       this.classList.add('active');
     });
   });
 
-  // Scroll animation functionality
+  // Scroll animation
   const scrollElements = document.querySelectorAll('.fade-in-on-scroll');
   
-  // Check if element is in viewport
   const elementInView = (el, dividend = 1) => {
     const elementTop = el.getBoundingClientRect().top;
     return (
@@ -76,17 +74,14 @@ document.addEventListener('DOMContentLoaded', function() {
     );
   };
 
-  // Show element with animation
   const displayScrollElement = (element) => {
     element.classList.add('scrolled');
   };
 
-  // Hide element animation
   const hideScrollElement = (element) => {
     element.classList.remove('scrolled');
   };
 
-  // Handle scroll animations
   const handleScrollAnimation = () => {
     scrollElements.forEach((el) => {
       if (elementInView(el, 1.1)) {
@@ -97,31 +92,27 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   };
 
-  // Add scroll event listener
   window.addEventListener('scroll', () => {
     handleScrollAnimation();
   });
 
-  // Initial animation check
   handleScrollAnimation();
 
-  // Profile picture zoom functionality - with timeout for safety
+  // Profile picture zoom - TIMEOUT-tal a biztonság kedvéért
   setTimeout(() => {
     const profilePicture = document.querySelector('.profile-picture img');
     const profileContainer = document.querySelector('.profile-picture');
     
-    // Check if elements exist
     if (!profilePicture || !profileContainer) {
       console.log('Profile picture elements not found');
       return;
     }
 
-    // Create overlay element
+    // Overlay létrehozása
     const overlay = document.createElement('div');
     overlay.className = 'zoom-overlay';
     document.body.appendChild(overlay);
 
-    // Close zoom function
     function closeZoom() {
       profilePicture.classList.remove('zoomed');
       profileContainer.classList.remove('zoom-disabled');
@@ -130,15 +121,12 @@ document.addEventListener('DOMContentLoaded', function() {
       document.body.classList.remove('zoom-active');
     }
 
-    // Profile picture click event - toggle zoom
     profilePicture.addEventListener('click', (e) => {
       e.stopPropagation();
       
       if (profilePicture.classList.contains('zoomed')) {
-        // If already zoomed, close it
         closeZoom();
       } else {
-        // If not zoomed, open zoom
         profilePicture.classList.add('zoomed');
         profileContainer.classList.add('zoom-disabled');
         overlay.classList.add('active');
@@ -147,17 +135,14 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
 
-    // Close zoom when clicking on overlay
     overlay.addEventListener('click', closeZoom);
 
-    // Close zoom with Escape key
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && profilePicture.classList.contains('zoomed')) {
         closeZoom();
       }
     });
 
-    // Close zoom when clicking anywhere else
     document.addEventListener('click', (e) => {
       if (profilePicture.classList.contains('zoomed') && 
           !profilePicture.contains(e.target) && 
@@ -165,5 +150,5 @@ document.addEventListener('DOMContentLoaded', function() {
         closeZoom();
       }
     });
-  }, 100); // 100ms delay for safety
+  }, 100); // 100ms késleltetés
 });
