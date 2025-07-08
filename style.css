@@ -145,6 +145,7 @@ body {
   margin: 0 auto;
 }
 
+/* Profile Picture */
 .profile-picture {
   width: 120px;
   height: 120px;
@@ -153,17 +154,92 @@ body {
   margin: 0 auto 24px;
   border: 3px solid var(--border);
   transition: all 0.3s ease;
+  cursor: pointer;
+  display: block;
 }
+
 
 .profile-picture img {
-  width: 80%;
-  height: 80%;
+  width: 70%;
+  height: 70%;
   object-fit: cover;
+  transition: all 0.4s ease;
+  cursor: pointer;
 }
 
-.profile-picture:hover {
+.profile-picture:not(.zoom-disabled):hover {
   transform: scale(1.05);
   border-color: var(--accent);
+}
+
+.profile-picture.zoom-disabled {
+  transition: none !important;
+  transform: none !important;
+}
+
+.profile-picture.zoom-disabled:hover {
+  transform: none !important;
+  border-color: var(--border) !important;
+}
+
+/* Zoom overlay */
+.zoom-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  cursor: pointer !important;
+}
+
+.zoom-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.dark-mode .zoom-overlay {
+  background: rgba(0, 0, 0, 0.75);
+}
+
+/* Zoomed image*/
+.profile-picture img.zoomed {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: 70vh;
+  max-width: 80vw;
+  max-height: 80vh;
+  transform: translate(-50%, -50%) !important;
+  border-radius: 12px;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+  cursor: pointer !important;
+  z-index: 1000;
+  object-fit: contain;
+  transition: none !important;
+}
+
+.profile-picture img.zoomed:hover {
+  transform: translate(-50%, -50%) !important;
+}
+
+
+.dark-mode .profile-picture img.zoomed {
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.2);
+}
+
+/* Cursor fix in zoom mode */
+.zoom-active,
+.zoom-active *,
+.zoom-active *:hover {
+  cursor: pointer !important;
 }
 
 .hero-title {
@@ -257,36 +333,17 @@ body {
   transition: width 1s ease;
 }
 
-.skill-progress[data-skill="1"] {
-  width: 10%;
-}
-.skill-progress[data-skill="2"] {
-  width: 20%;
-}
-.skill-progress[data-skill="3"] {
-  width: 30%;
-}
-.skill-progress[data-skill="4"] {
-  width: 40%;
-}
-.skill-progress[data-skill="5"] {
-  width: 50%;
-}
-.skill-progress[data-skill="6"] {
-  width: 60%;
-}
-.skill-progress[data-skill="7"] {
-  width: 70%;
-}
-.skill-progress[data-skill="8"] {
-  width: 80%;
-}
-.skill-progress[data-skill="9"] {
-  width: 90%;
-}
-.skill-progress[data-skill="10"] {
-  width: 100%;
-}
+.skill-progress[data-skill="1"] { width: 10%; }
+.skill-progress[data-skill="2"] { width: 20%; }
+.skill-progress[data-skill="3"] { width: 30%; }
+.skill-progress[data-skill="4"] { width: 40%; }
+.skill-progress[data-skill="5"] { width: 50%; }
+.skill-progress[data-skill="6"] { width: 60%; }
+.skill-progress[data-skill="7"] { width: 70%; }
+.skill-progress[data-skill="8"] { width: 80%; }
+.skill-progress[data-skill="9"] { width: 90%; }
+.skill-progress[data-skill="10"] { width: 100%; }
+
 .skill-level {
   font-size: 12px;
   color: var(--text-secondary);
@@ -437,25 +494,11 @@ body {
   transform: translateY(0);
 }
 
-.fade-in-on-scroll:nth-child(1) {
-  transition-delay: 0.07s;
-}
-
-.fade-in-on-scroll:nth-child(2) {
-  transition-delay: 0.15s;
-}
-
-.fade-in-on-scroll:nth-child(3) {
-  transition-delay: 0.23s;
-}
-
-.fade-in-on-scroll:nth-child(4) {
-  transition-delay: 0.3s;
-}
-
-.fade-in-on-scroll:nth-child(5) {
-  transition-delay: 0.38s;
-}
+.fade-in-on-scroll:nth-child(1) { transition-delay: 0.07s; }
+.fade-in-on-scroll:nth-child(2) { transition-delay: 0.15s; }
+.fade-in-on-scroll:nth-child(3) { transition-delay: 0.23s; }
+.fade-in-on-scroll:nth-child(4) { transition-delay: 0.3s; }
+.fade-in-on-scroll:nth-child(5) { transition-delay: 0.38s; }
 
 .slide-in-left {
   opacity: 0;
@@ -531,6 +574,12 @@ body {
   
   .section-title {
     font-size: 28px;
+  }
+  
+  .profile-picture img.zoomed {
+    height: 60vh;
+    max-width: 90vw;
+    max-height: 70vh;
   }
 }
 

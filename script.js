@@ -90,3 +90,49 @@ window.addEventListener('scroll', () => {
 });
 
 handleScrollAnimation();
+
+// Profile picture zoom
+const overlay = document.createElement('div');
+overlay.className = 'zoom-overlay';
+document.body.appendChild(overlay);
+
+const profilePicture = document.querySelector('.profile-picture img');
+const profileContainer = document.querySelector('.profile-picture');
+
+function closeZoom() {
+  profilePicture.classList.remove('zoomed');
+  profileContainer.classList.remove('zoom-disabled');
+  overlay.classList.remove('active');
+  document.body.style.overflow = 'auto';
+  document.body.classList.remove('zoom-active');
+}
+
+profilePicture.addEventListener('click', (e) => {
+  e.stopPropagation();
+  
+  if (profilePicture.classList.contains('zoomed')) {
+    closeZoom();
+  } else {
+    profilePicture.classList.add('zoomed');
+    profileContainer.classList.add('zoom-disabled');
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    document.body.classList.add('zoom-active');
+  }
+});
+
+overlay.addEventListener('click', closeZoom);
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && profilePicture.classList.contains('zoomed')) {
+    closeZoom();
+  }
+});
+
+document.addEventListener('click', (e) => {
+  if (profilePicture.classList.contains('zoomed') && 
+      !profilePicture.contains(e.target) && 
+      !profileContainer.contains(e.target)) {
+    closeZoom();
+  }
+});
