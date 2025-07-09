@@ -1,0 +1,27 @@
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #fafafa;
+  --text-primary: #1a1a1a;
+  --text-secondary: #666666;
+  --accent: #0066cc;
+  --accent-dark: #0052a3;
+  --border: #e6e6e6;
+  --shadow: rgba(0, 0, 0, 0.04);
+  --shadow-hover: rgba(0, 0, 0, 0.08);
+  --card-bg: #ffffff;
+  --card-hover: #f8f9fa;
+}
+
+.dark-mode {
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #1a1a1a;
+  --text-primary: #ffffff;
+  --text-secondary: #999999;
+  --accent: #4d9fff;
+  --accent-dark: #3385ff;
+  --border: #333333;
+  --shadow: rgba(255, 255, 255, 0.04);
+  --shadow-hover: rgba(255, 255, 255, 0.08);
+  --card-bg: #1f1f1f;
+  --card-hover: #2a2a2a;
+}

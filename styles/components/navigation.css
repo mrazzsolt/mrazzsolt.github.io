@@ -1,0 +1,82 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border);
+  z-index: 100;
+  backdrop-filter: blur(10px);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-brand {
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.nav-brand:hover {
+  color: var(--accent);
+  background: var(--bg-secondary);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+.nav-link:hover {
+  color: var(--accent);
+  background: var(--bg-secondary);
+}
+
+.nav-link.active {
+  color: var(--accent);
+  background: var(--bg-secondary);
+}
+
+.theme-btn {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  color: var(--text-primary);
+}
+
+.dark-mode .theme-btn {
+  background: var(--card-bg);
+  color: #ffffff;
+  border: 1px solid var(--border);
+}
+
+.theme-btn:hover {
+  background: var(--card-hover);
+  transform: translateY(-1px);
+}

@@ -1,0 +1,13 @@
+/* Import all CSS files in the correct order */
+@import 'base/variables.css';
+@import 'base/reset.css';
+@import 'base/typography.css';
+@import 'layout/grid.css';
+@import 'layout/sections.css';
+@import 'layout/responsive.css';
+@import 'components/navigation.css';
+@import 'components/buttons.css';
+@import 'components/cards.css';
+@import 'components/profile.css';
+@import 'utilities/animations.css';
+@import 'utilities/helpers.css';

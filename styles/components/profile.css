@@ -1,0 +1,90 @@
+.profile-picture {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 24px;
+  border: 3px solid var(--border);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: block;
+}
+
+.profile-picture img {
+  width: 70%;
+  height: 70%;
+  object-fit: cover;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.profile-picture:not(.zoom-disabled):hover {
+  transform: scale(1.05);
+  border-color: var(--accent);
+}
+
+.profile-picture.zoom-disabled {
+  transition: none !important;
+  transform: none !important;
+}
+
+.profile-picture.zoom-disabled:hover {
+  transform: none !important;
+  border-color: var(--border) !important;
+}
+
+.zoom-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  cursor: pointer !important;
+}
+
+.zoom-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.dark-mode .zoom-overlay {
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.profile-picture img.zoomed {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: 70vh;
+  max-width: 80vw;
+  max-height: 80vh;
+  transform: translate(-50%, -50%) !important;
+  border-radius: 12px;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+  cursor: pointer !important;
+  z-index: 1000;
+  object-fit: contain;
+  transition: none !important;
+}
+
+.profile-picture img.zoomed:hover {
+  transform: translate(-50%, -50%) !important;
+}
+
+.dark-mode .profile-picture img.zoomed {
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.2);
+}
+
+.zoom-active,
+.zoom-active *,
+.zoom-active *:hover {
+  cursor: pointer !important;
+}
