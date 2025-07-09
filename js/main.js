@@ -2,6 +2,7 @@ import { ThemeToggle } from './modules/themeToggle.js';
 import { Navigation } from './modules/navigation.js';
 import { ScrollAnimation } from './modules/scrollAnimation.js';
 import { ProfileZoom } from './modules/profileZoom.js';
+import { HamburgerMenu } from './modules/hamburgerMenu.js';
 import { DOMUtils } from './utils/domUtils.js';
 
 class App {
@@ -15,6 +16,7 @@ class App {
       new Navigation();
       new ScrollAnimation();
       new ProfileZoom();
+      new HamburgerMenu();
     });
   }
 }
