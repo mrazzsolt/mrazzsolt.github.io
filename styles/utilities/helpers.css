@@ -1,0 +1,10 @@
+/* Main content megjelenítés biztosítása */
+#main-content.loaded {
+  display: block !important;
+  opacity: 1 !important;
+}
+
+/* Loading screen elrejtése */
+#loading-screen.hidden {
+  display: none !important;
+}

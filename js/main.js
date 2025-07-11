@@ -1,3 +1,4 @@
+import { LoadingScreen } from './modules/loadingScreen.js';
 import { ThemeToggle } from './modules/themeToggle.js';
 import { Navigation } from './modules/navigation.js';
 import { ScrollAnimation } from './modules/scrollAnimation.js';
@@ -13,6 +14,8 @@ class App {
   }
 
   init() {
+    new LoadingScreen();
+
     DOMUtils.ready(() => {
       new ThemeToggle();
       new Navigation();
