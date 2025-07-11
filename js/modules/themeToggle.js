@@ -23,7 +23,11 @@ export class ThemeToggle {
 
   loadSavedTheme() {
     const savedTheme = localStorage.getItem('darkMode');
-    if (savedTheme === 'true') {
+    if (savedTheme === null)
+    {
+      this.body.classList.add('dark-mode');
+      localStorage.setItem('darkMode','true');
+    } else if (savedTheme === 'true') {
       this.body.classList.add('dark-mode');
     }
     this.updateButton();

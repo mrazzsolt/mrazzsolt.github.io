@@ -1,4 +1,3 @@
-/* Import all CSS files in the correct order */
 @import 'base/variables.css';
 @import 'base/reset.css';
 @import 'base/typography.css';
