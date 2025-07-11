@@ -4,6 +4,8 @@ import { ScrollAnimation } from './modules/scrollAnimation.js';
 import { ProfileZoom } from './modules/profileZoom.js';
 import { HamburgerMenu } from './modules/hamburgerMenu.js';
 import { DOMUtils } from './utils/domUtils.js';
+import { ImageProtection } from './modules/imageProtection.js';
+
 
 class App {
   constructor() {
@@ -17,6 +19,7 @@ class App {
       new ScrollAnimation();
       new ProfileZoom();
       new HamburgerMenu();
+      new ImageProtection();
     });
   }
 }
