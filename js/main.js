@@ -6,6 +6,7 @@ import { ProfileZoom } from './modules/profileZoom.js';
 import { HamburgerMenu } from './modules/hamburgerMenu.js';
 import { DOMUtils } from './utils/domUtils.js';
 import { ImageProtection } from './modules/imageProtection.js';
+import { VisitorCounter } from './modules/visitorCounter.js';
 
 
 class App {
@@ -14,6 +15,7 @@ class App {
   }
 
   init() {
+
     new LoadingScreen();
 
     DOMUtils.ready(() => {
@@ -23,6 +25,7 @@ class App {
       new ProfileZoom();
       new HamburgerMenu();
       new ImageProtection();
+      new VisitorCounter();
     });
   }
 }
