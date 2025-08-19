@@ -1,4 +1,3 @@
-// modules/visitorCounter.js
 export class VisitorCounter {
   constructor() {
     this.webAppUrl = 'https://script.google.com/macros/s/AKfycbykhXHZYTnX08V_PiMT-2_2cA5z_a3jT3k8deWca9iL4LZHeUDUX4OWqEfE58qoZJWf/exec';
@@ -18,7 +17,7 @@ export class VisitorCounter {
         mode: 'no-cors'
       });
       
-      console.log('Visitor tracked successfully');
+      
       
     } catch (error) {
       console.warn('Visitor tracking failed:', error);

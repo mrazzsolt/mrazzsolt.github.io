@@ -17,6 +17,7 @@ class App {
   init() {
 
     new LoadingScreen();
+    new VisitorCounter();
 
     DOMUtils.ready(() => {
       new ThemeToggle();
@@ -25,7 +26,7 @@ class App {
       new ProfileZoom();
       new HamburgerMenu();
       new ImageProtection();
-      new VisitorCounter();
+      
     });
   }
 }
