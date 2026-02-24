@@ -146,10 +146,26 @@
   </section>
 
   <!-- Projects section-->
+
   <section id="projects" class="projects-section">
     <div class="container">
       <h2 class="section-title fade-in-on-scroll">Home Projects</h2>
       <div class="projects-grid">
+
+        <div class="project-item fade-in-on-scroll">
+          <h3>CDC Medallion Lakehouse</h3>
+          <p>The project demonstrates an end-to-end flow where dummy valid and invalid records are generated into an Oracle source database using Python scripts, changes are streamed through Kafka, landed into a MinIO S3 bucket (Bronze), and then transformed with dbt into DuckDB (Silver tier). Invalid records are separated via a DLQ (Dead Letter Queue) handler.</p>
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">Oracle</span>
+            <span class="tag">Kafka</span>
+            <span class="tag">S3 bucket</span>
+            <span class="tag">dbt</span>
+            <span class="tag">Docker</span>
+          </div>
+          <a href="https://github.com/mrazzsolt/cdc-medallion-lakehouse" class="project-link" target="_blank">View Project</a>
+        </div>
+
         <div class="project-item fade-in-on-scroll">
           <h3>ELT Pipeline</h3>
           <p>A modern ELT (Extract, Load, Transform) data pipeline built with Airflow, dbt, Docker, and Python for automated data workflows.</p>
@@ -204,17 +220,6 @@
             <span class="tag">Console based game</span>
           </div>
           <a href="https://github.com/mrazzsolt/tictactoeMiniMax" class="project-link" target="_blank">View Project</a>
-        </div>
-        
-        <div class="project-item fade-in-on-scroll">
-          <h3>GDP Analyzer</h3>
-          <p>GDP Analyzer is a Python-based GDP data analysis and visualization tool designed to process Eurostat data. It uses a combination of pandas, matplotlib, seaborn, plotly, and AI-based techniques (clustering and anomaly detection) to explore and visualize European GDP trends.</p>
-          <div class="project-tags">
-            <span class="tag">Python</span>
-            <span class="tag">Data</span>
-            <span class="tag">Visualization</span>
-          </div>
-          <a href="https://github.com/mrazzsolt/gdpAnalyzer" class="project-link" target="_blank">View Project</a>
         </div>
         
       </div>
